@@ -38,9 +38,9 @@ locations
 # Can be downloaded from : 
 # https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
 #
-cascPath = r'C:\Users\C35612.LAUNCHER\1_Data_Innovation_Analytics\code\experiment_settoIdeaProject\centerFaceCapture'
-imagePath = r'\\solon.prd\files\P\Global\Users\C35612\UserData\Documents\My Pictures\team'
-destPath = r'C:\Users\C35612.LAUNCHER\1_Data_Innovation_Analytics\code\experiment_settoIdeaProject\centerFaceCapture'
+cascPath = r'C:\Downloads\'
+imagePath = r'C:\Users\...\Pictures'
+destPath = r'C:\Users\...\Pictures'
 
 face_cascade = cv2.CascadeClassifier(cascPath + '\haarcascade_frontalface_default.xml')
 list_images = glob.glob(imagePath + "\*.jpg") + glob.glob(imagePath + "\*.png") + glob.glob(imagePath + "\*.jpeg")
