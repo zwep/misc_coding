@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56a089c-6eed-4d12-b7ce-a28c9a27b27c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="a56a089c-6eed-4d12-b7ce-a28c9a27b27c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -241,6 +239,30 @@
               <item name="Experiments" type="b2602c69:ProjectViewProjectNode" />
               <item name="Experiments" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Experiments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="Kivy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Experiments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="Kivy" type="462c0819:PsiDirectoryNode" />
+              <item name="consumeproduce" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Experiments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="Kivy" type="462c0819:PsiDirectoryNode" />
+              <item name="sound_summarizer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Experiments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="Kivy" type="462c0819:PsiDirectoryNode" />
+              <item name="sound_summarizer" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -430,12 +452,12 @@
       <workItem from="1518100231209" duration="240000" />
       <workItem from="1518338508137" duration="3616000" />
       <workItem from="1518419736580" duration="270000" />
-      <workItem from="1518872065480" duration="719000" />
+      <workItem from="1518872065480" duration="1118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29257000" />
+    <option name="totallyTimeSpent" value="29656000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
