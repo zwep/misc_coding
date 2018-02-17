@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56a089c-6eed-4d12-b7ce-a28c9a27b27c" name="Default" comment="" />
+    <list default="true" id="a56a089c-6eed-4d12-b7ce-a28c9a27b27c" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/general_processing.pde" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/processing_light_sens_temp.pde" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/processing_light_sens_temp_pde.pde" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Raspberrypi.txt" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,11 +31,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_plot_report.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_plot_report.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reporting/create_plot_report.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
-              <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+              <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="general_processing.pde" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Arduino/general_processing.pde">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="58" column="84" lean-forward="true" selection-start-line="58" selection-start-column="84" selection-end-line="58" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -176,8 +192,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1932" />
-    <option name="height" value="1050" />
+    <option name="x" value="960" />
+    <option name="width" value="960" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -242,6 +259,11 @@
             <path>
               <item name="Experiments" type="b2602c69:ProjectViewProjectNode" />
               <item name="Experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="Arduino" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Experiments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Experiments" type="462c0819:PsiDirectoryNode" />
               <item name="Kivy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -249,19 +271,6 @@
               <item name="Experiments" type="462c0819:PsiDirectoryNode" />
               <item name="Kivy" type="462c0819:PsiDirectoryNode" />
               <item name="consumeproduce" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Experiments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Experiments" type="462c0819:PsiDirectoryNode" />
-              <item name="Kivy" type="462c0819:PsiDirectoryNode" />
-              <item name="sound_summarizer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Experiments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Experiments" type="462c0819:PsiDirectoryNode" />
-              <item name="Kivy" type="462c0819:PsiDirectoryNode" />
-              <item name="sound_summarizer" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -298,11 +307,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\C35612.LAUNCHER\IdeaProjects\Experiments\Arduino" />
+      <recent name="C:\Users\C35612.LAUNCHER\IdeaProjects\Experiments" />
       <recent name="C:\Users\C35612.LAUNCHER\IdeaProjects\Experiments\scraping" />
       <recent name="C:\Users\C35612.LAUNCHER\IdeaProjects\Experiments\Sport result analysis" />
       <recent name="C:\Users\C35612.LAUNCHER\IdeaProjects\Experiments\Transaction analysis" />
-      <recent name="C:\Users\C35612.LAUNCHER\IdeaProjects\Experiments\Kivy" />
-      <recent name="C:\Users\C35612.LAUNCHER\IdeaProjects\Experiments\Arduino" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -452,15 +461,16 @@
       <workItem from="1518100231209" duration="240000" />
       <workItem from="1518338508137" duration="3616000" />
       <workItem from="1518419736580" duration="270000" />
-      <workItem from="1518872065480" duration="1118000" />
+      <workItem from="1518872065480" duration="1723000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29656000" />
+    <option name="totallyTimeSpent" value="30261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -474,7 +484,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -508,16 +518,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TransactionAnalysis/run_data_tagger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-          <folding>
-            <element signature="e#65#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TransactionAnalysis/createPlot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1029">
@@ -884,7 +884,15 @@
     <entry file="file://$PROJECT_DIR$/reporting/create_plot_report.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Arduino/general_processing.pde">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="58" column="84" lean-forward="true" selection-start-line="58" selection-start-column="84" selection-end-line="58" selection-end-column="84" />
           <folding />
         </state>
       </provider>
