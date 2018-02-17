@@ -1,0 +1,72 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+<RootWidget>:
+    manager: manager
+    do_default_tab: False
+    # add a ScreenManager to the panel
+    ScreenManager:
+        id: manager
+        transition: NoTransition()
+        Screen:
+            id: sc1
+            name: 'screen_one'
+            text_input: text_input
+
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    size_hint_x: 0.25
+                    orientation: 'vertical'
+                    FileChooserListView:
+                        dirselect: True
+                        id: filechooser
+                        path: r"D:\temp\reg_doc\html"
+                    HeaderButton:
+                        id: load_button
+                        size_hint_y: 0.05
+                        text: 'Load'
+                        on_release: root.load(filechooser.path, filechooser.selection)
+                TextInput:
+                    id: text_input
+                    focus: True
+                    multiline: True
+                    readonly: True
+
+        Screen
+            id: sc2
+            name: 'screen_two'
+            text_input: text_input
+
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    size_hint_x: 0.25
+                    orientation: 'vertical'
+                    FileChooserListView:
+                        dirselect: True
+                        id: filechooser
+                        path: r"D:\temp\reg_doc\html"
+                    HeaderButton:
+                        id: load_button
+                        size_hint_y: 0.05
+                        text: 'Load'
+                        on_release: root.load(filechooser.path, filechooser.selection)
+                TextInput:
+                    id: text_input
+                    focus: True
+                    multiline: True
+                    readonly: True
+    TabbedPanelHeader:
+        text: sc1.name
+        # store a screen name to link the tab to a screen
+        screen: sc1.name
+    TabbedPanelHeader:
+        text: sc2.name
+        screen: sc2.name
+
+<HeaderButton@Button>:
+    font_size: 12
+    font_name: 'Arial'
+    color: 1, 1, 1, 1
+    halign: 'left'
+    background_normal: ''
+    background_color: 0, 0, 0, 1
