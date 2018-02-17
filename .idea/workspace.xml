@@ -2,108 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a56a089c-6eed-4d12-b7ce-a28c9a27b27c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/arduino_light_sens/arduino_light_sens.ino" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/arduino_light_sens/arduino_light_sens_temp.ino" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/light_sens_plot.R" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/light_sens_plot.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/light_sens_temp_plot.R" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/light_sens_temp_plot.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/processing_light_sens/processing_light_sens_temp.pde" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/processing_light_sens/processing_temp.pde" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/run_light_sens_plot_py.bat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Arduino/run_light_sens_temp_plot_py.bat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Experiments.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Hive Overview/GenerateOverview.r" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Hive Overview/overview_hive.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/Test.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/boxlayout.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/calculator.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/consumeproduce/examplecode.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/customwidget.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/floating.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/gridlayouta.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/my_first_app.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/my_first_app.spec" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 095948304602.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 110033279286.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 110619576982.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 112625925745.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 114221646307.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 115128277965.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 115206502787.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 122747282844.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 123943302283.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 124323846373.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 124323846373.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 140221186679.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 140221186679.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 152110301388.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-10-02 152110301388.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-11-06 122313256652.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-11-06 122313256652.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-11-10 142341783357.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-11-10 143446249694.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-11-10 143446249694.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-11-10 143629755043.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/2017-11-10 144551199182.wav" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/backup/sound_summarizer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/backup/soundsummarizer.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/backup/soundsummarizer_archive.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/build/sound_summarizer/base_library.zip" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/build/sound_summarizer/sound_summarizer.exe.manifest" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/draft.zip" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/lib/TextAnalyzer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/lib/loadrss.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/lib/processtext.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/sound_summarizer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/sound_summarizer.spec" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/soundsummarizer.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/sound_summarizer/soundsummarizer_archive.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/summarizer.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kivy/testing/testkivy.kv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sport result analysis/CodeHansTriatlon.r" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Sport result analysis/CodeJippeTriatlon.r" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/TransactionAnalysis/createPlot.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/TransactionAnalysis/createReport.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/TransactionAnalysis/createTable.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/TransactionAnalysis/create_table_py.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/TransactionAnalysis/label_dict.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/TransactionAnalysis/misc_functions.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/getIdealTRX/getIdealTransactionSum.r" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hackaton/amsterdam/createTermId.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hackaton/amsterdam/full_code_hackaton.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hackaton/amsterdam/plotShapefilestuff.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image_recognition/capture_faces.pde" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image_recognition/cluster_faces.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image_recognition/face_centerizer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image_recognition/face_graph_vis.r" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image_recognition/face_grouper.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image_recognition/haarcascade_frontalface_default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/package_demos/nnet_test_case.R" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/package_demos/pykalman_test_case.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/package_demos/run_test_sysarg.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/package_demos/test_sysarg.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/reporting/create_plot_report.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/scraping/Connections_name_scraper.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/scraping/Funda_scraper.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/scraping/Topolis_scraper.py.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/scraping/scrape_the_walkscore.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/scraping/scrape_the_walkscore.r" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/scraping/selenium_TOPOLIS.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/scraping/start_selenium.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/some_text.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sound analyser/basicscript.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sound analyser/example_class.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sound analyser/record.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/webframeworks/shiny/server.R" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/webframeworks/shiny/ui.R" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -531,12 +430,12 @@
       <workItem from="1518100231209" duration="240000" />
       <workItem from="1518338508137" duration="3616000" />
       <workItem from="1518419736580" duration="270000" />
-      <workItem from="1518872065480" duration="535000" />
+      <workItem from="1518872065480" duration="719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29073000" />
+    <option name="totallyTimeSpent" value="29257000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -550,10 +449,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4515625" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
