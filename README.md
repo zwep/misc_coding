@@ -1,2 +1,3 @@
-# fun_code_stuff
-Here I do.. as the name says.. fun code stuff
+# misc coding
+
+Here are some pieces of code I once used... 
