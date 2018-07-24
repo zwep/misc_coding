@@ -1,0 +1,139 @@
+<SelectableLabel>:
+    # Draw a background to indicate selection
+    canvas.before:
+        Color:
+            rgba: (0.4, 0.4, 0.4, 1) if self.selected else (0.5, 0.5, 0.5, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Test>:
+    canvas:
+        Color:
+            rgba: 0.3, 0.3, 0.3, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    rv: rv
+    text_input: text_input
+    text_search: text_search
+    text_summary: text_summary
+    text_ner: text_ner
+    text_keyword: text_keyword
+    text_trigram: text_trigram
+    text_func: text_func
+
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        BoxLayout:
+            size_hint_x: 0.25
+            orientation: 'vertical'
+            TextInput:
+                size_hint_y: 0.05
+                id: text_search
+                hint_text: 'Enter your search criteria here'
+                on_double_tap: root.change_dir()
+
+            BoxLayout:
+                RecycleView:
+                    id: rv
+                    viewclass: 'SelectableLabel'
+                    scroll_type: ['bars', 'content']
+                    scroll_wheel_distance: dp(114)
+                    bar_width: dp(10)
+                    SelectableRecycleBoxLayout:
+                        default_size: None, dp(56)
+                        default_size_hint: 1, None
+                        size_hint_y: None
+                        height: self.minimum_height
+                        orientation: 'vertical'
+                        multiselect: True
+                        spacing: dp(2)
+            BoxLayout:
+                size_hint_y: 0.05
+                HeaderButton:
+                    id: load_button
+                    size_hint_x: 0.5
+                    text: 'Load'
+                    on_release: root.load(rv.layout_manager.selected_nodes)
+
+                HeaderButton:
+                    id: load_multiple_button
+                    size_hint_x: 0.5
+                    text: 'Load multiple'
+                    on_release: root.load_multiple(rv.data)
+
+        TextInput:
+            id: text_input
+            focus: True
+            multiline: True
+            readonly: True
+
+        BoxLayout:
+            size_hint_x: 0.35
+            orientation: 'vertical'
+            BoxLayout:
+                size_hint_y: 0.08
+                Button:
+                    text: 'Generated information'
+                Button:
+                    text: 'Known information'
+            BoxLayout:
+                orientation: 'vertical'
+                HeaderButton:
+                    size_hint_y: 0.1
+                    text: 'Keyword'
+                TextInput:
+                    id: text_keyword
+                    hint_text: 'Here we will show the keywords'
+            BoxLayout:
+                orientation: 'vertical'
+                HeaderButton:
+                    size_hint_y: 0.1
+                    text: 'Summary'
+                TextInput:
+                    id: text_summary
+                    hint_text: 'Here we will show the summary'
+            BoxLayout:
+                orientation: 'vertical'
+                HeaderButton:
+                    size_hint_y: 0.1
+                    text: 'Tri-grams'
+                TextInput:
+                    id: text_trigram
+                    hint_text: 'Here we will show the trigrams'
+            BoxLayout:
+                orientation: 'vertical'
+                HeaderButton:
+                    size_hint_y: 0.1
+                    text: 'Named Entities'
+                TextInput:
+                    id: text_ner
+                    hint_text: 'Here we will show the NERs'
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: 0.35
+                HeaderButton:
+                    size_hint_y: 0.15
+                    text: 'Affected Function and Business Line'
+                TextInput:
+                    id: text_func
+                    hint_text: 'Here we will show the affected Function and Business Line'
+
+<HeaderButton@Button>:
+    font_size: 12
+    font_name: 'Arial'
+    color: 1, 1, 1, 1
+    halign: 'left'
+    background_normal: ''
+    background_color: 0, 0, 0, 1
+
+<CustButton@Button>:
+    font_size: 25
+    font_name: 'Arial'
+    color: 0, 0, 0, 1
+    allow_stretch: True
+    halign: 'left'
+    background_normal: ''
+    background_color: 0, .44, .4, 1

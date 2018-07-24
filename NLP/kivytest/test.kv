@@ -1,0 +1,45 @@
+
+<SelectableLabel>:
+    # Draw a background to indicate selection
+    canvas.before:
+        Color:
+            rgba: (0.4, 0.4, 0.4, 1) if self.selected else (0.5, 0.5, 0.5, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Test>:
+    canvas:
+        Color:
+            rgba: 0.3, 0.3, 0.3, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    rv: rv
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            Button:
+                id: next_track
+                text: "Next Track"
+                # on_press: root.populate()
+            Button:
+                id: previous_track
+                text: "Previous Track"
+        BoxLayout:
+            RecycleView:
+                id: rv
+                viewclass: 'SelectableLabel'
+                scroll_type: ['bars', 'content']
+                scroll_wheel_distance: dp(114)
+                bar_width: dp(10)
+                SelectableRecycleBoxLayout:
+                    default_size: None, dp(56)
+                    default_size_hint: 1, None
+                    size_hint_y: None
+                    height: self.minimum_height
+                    orientation: 'vertical'
+                    multiselect: True
+                    # touch_multiselect: True
+                    spacing: dp(2)

@@ -1,0 +1,159 @@
+#:kivy 1.1.0
+
+Root:
+    text_search: text_search
+    text_input: text_input
+    text_keyword: text_keyword
+    text_summary: text_summary
+    text_trigram: text_trigram
+    text_ner: text_ner
+    text_func: text_func
+    filechooser: filechooser
+
+    BoxLayout:
+        orientation: 'horizontal'
+        BoxLayout:
+            size_hint_x: 0.25
+            orientation: 'vertical'
+            TabTextInput:
+                size_hint_y: 0.05
+                id: text_search
+                hint_text: 'Enter your search criteria here'
+                on_double_tap: root.change_dir()
+
+            FileChooserListView:
+                dirselect: True
+                id: filechooser
+                path: 'D:\\temp\\reg_doc\\html_indexed'
+            BoxLayout:
+                HeaderButton:
+                    id: load_button
+                    size_hint_y: 0.05
+                    size_hint_x: 0.5
+                    text: 'Load'
+                    on_release: root.load(filechooser.path, filechooser.selection)
+                HeaderButton:
+                    id: load_multiple_button
+                    size_hint_y: 0.05
+                    size_hint_x: 0.5
+                    text: 'Load multiple'
+                    on_release: root.load_multiple(filechooser.path, filechooser.selection)
+        TextInput:
+            id: text_input
+            focus: True
+            multiline: True
+            readonly: True
+
+        BoxLayout:
+            size_hint_x: 0.35
+            orientation: 'vertical'
+            BoxLayout:
+                size_hint_y: 0.08
+                Button:
+                    text: 'Generated information'
+                Button:
+                    text: 'Known information'
+            BoxLayout:
+                orientation: 'vertical'
+                HeaderButton:
+                    size_hint_y: 0.1
+                    text: 'Keyword'
+                    on_press: root.return_most_common_keywords()
+                TextInput:
+                    id: text_keyword
+                    hint_text: 'Here we will show the keyword'
+            BoxLayout:
+                orientation: 'vertical'
+                HeaderButton:
+                    size_hint_y: 0.1
+                    text: 'Summary'
+                    on_press: root.return_summary()
+                TextInput:
+                    id: text_summary
+                    hint_text: 'Here we will show the summary'
+            BoxLayout:
+                orientation: 'vertical'
+                HeaderButton:
+                    size_hint_y: 0.1
+                    text: 'Tri-grams'
+                    on_press: root.return_most_common_ngram()
+                TextInput:
+                    id: text_trigram
+                    hint_text: 'Here we will show the trigrams'
+            BoxLayout:
+                orientation: 'vertical'
+                HeaderButton:
+                    size_hint_y: 0.1
+                    text: 'Named Entities'
+                    on_press: root.return_most_common_ner()
+                TextInput:
+                    id: text_ner
+                    hint_text: 'Here we will show the NERs'
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: 0.35
+                HeaderButton:
+                    size_hint_y: 0.15
+                    text: 'Affected Function and Business Line'
+                    on_press: root.return_impact(xls_data, col_dict_rev)
+                TextInput:
+                    id: text_func
+                    hint_text: 'Here we will show the affected Function and Business Line'
+
+
+<HeaderButton@Button>:
+    font_size: 12
+    font_name: 'Arial'
+    color: 1, 1, 1, 1
+    halign: 'left'
+    background_normal: ''
+    background_color: 0, 0, 0, 1
+
+<CustButton@Button>:
+    font_size: 25
+    font_name: 'Arial'
+    color: 0, 0, 0, 1
+    allow_stretch: True
+    halign: 'left'
+    background_normal: ''
+    background_color: 0, .44, .4, 1
+
+<LoadDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+			path: r"D:\temp\reg_doc\html"
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Load"
+                on_release: root.load(filechooser.path, filechooser.selection)
+
+<ScreenOne>:
+    BoxLayout:
+        Button:
+            text: "Go to Screen 2"
+            on_press:
+                # You can define the duration of the change
+                # and the direction of the slide
+                root.manager.transition.direction = 'left'
+                root.manager.transition.duration = 1
+                root.manager.current = 'screen_two'
+
+<ScreenTwo>:
+    BoxLayout:
+        Button:
+            text: "Go to Screen 1"
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'screen_one'
