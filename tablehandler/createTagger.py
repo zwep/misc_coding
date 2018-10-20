@@ -6,6 +6,8 @@ In this file we create three classes that will help to load, prepare and label t
 usage, please use the code below
 
 """
+
+
 import pandas as pd
 import os
 import re
@@ -14,7 +16,7 @@ import glob
 
 import itertools
 
-from TransactionAnalysis.createTable import EditLabels
+from tablehandler.createTable import EditLabels
 
 
 class HandleFile:
@@ -28,7 +30,7 @@ class HandleFile:
         Implements methods for reading and writing a list of files
 
         :param year: Can be string or int, cannot be a list (yet)
-        :param path_in: Should be a valid directory
+        :param path_in: Should be a valid directory, containing all the years-folder of trx_data
         :param month: Can be string or int or list of those types
         :param path_out: Should be a valid directory
         """
@@ -36,6 +38,8 @@ class HandleFile:
         self.year = year
         self.month = month
         self.path_in = path_in
+        self.data = np.array([])  # place holder for the data that we load.
+
         if path_out:
             self.path_out = path_out
         else:
@@ -53,6 +57,7 @@ class HandleFile:
             else:
                 self.month = str(self.month).zfill(2)
 
+        
         file_dir = glob.glob(self.path_in + '\\*')
         file_list = [x for x in file_dir if re.findall(str(self.year) + '_' + self.month, x)]
         file_list.sort()
@@ -65,6 +70,8 @@ class HandleFile:
         """
         data_trx = [pd.read_csv(x, header=header, parse_dates=True) for x in self.file_list]
         data_trx = [x.fillna('') for x in data_trx]
+
+        self.data = data_trx
 
         return data_trx
 
@@ -96,8 +103,8 @@ class PrepRawFile(HandleFile):
         super().__init__(year, path_in, month, path_out)
         self.column_names = ["REK_NR", "CUR", "DATE", "DC_IND", "VALUE", "TGN_REK_NR", "NM_TGN_REK", "DATE_2",
                              "MUT_IND", "V1", "DESCR_1", "DESCR_2"]
-        self.data = self.load_trx_file(header=None)
-        self.data_prep = [self.prep_data(x) for x in self.data]
+        self.data = np.array([])
+        self.data_prep = np.array([])
 
     def prep_data(self, data):
         """
@@ -106,6 +113,8 @@ class PrepRawFile(HandleFile):
 
         :return: a prepped dataframe
         """
+        assert self.data, "Try to run load_trx_file() first"
+
         data_prep = data[list(range(len(self.column_names)))]
         data_prep.columns = self.column_names
         # Edit date..
@@ -130,6 +139,9 @@ class PrepRawFile(HandleFile):
 
         # Cum sum
         data_prep['CUM_VALUE'] = np.cumsum(data_prep['VALUE'])
+
+        self.data_prep = data_prep
+
         return data_prep
 
 

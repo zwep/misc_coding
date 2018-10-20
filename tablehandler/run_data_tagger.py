@@ -5,8 +5,9 @@
 With the code below we can tag data
 
 """
-from TransactionAnalysis import createTagger as cTag
-from TransactionAnalysis import createTable as cT
+
+from tablehandler import createTagger as cTag
+from tablehandler import createTable as cT
 import os
 import re
 
