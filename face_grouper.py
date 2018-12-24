@@ -38,7 +38,7 @@ locations
 # Can be downloaded from : 
 # https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
 #
-cascPath = r'C:\Downloads\'
+cascPath = r'C:\Downloads'
 imagePath = r'C:\Users\...\Pictures'
 destPath = r'C:\Users\...\Pictures'
 

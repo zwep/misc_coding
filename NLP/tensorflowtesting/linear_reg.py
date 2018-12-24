@@ -78,44 +78,44 @@ def generate_dataset():
 # Defines the neural net to execute (non)linear regression
 def linear_regression():
 
-	with tf.Graph().as_default as g_obj:
-		x = tf.placeholder(tf.float64, shape=(N_accuracy, 1), name='x')
-		y = tf.placeholder(tf.float64, shape=(N_accuracy,), name='y')
+    with tf.Graph().as_default as g_obj:
+        x = tf.placeholder(tf.float64, shape=(N_accuracy, 1), name='x')
+        y = tf.placeholder(tf.float64, shape=(N_accuracy,), name='y')
 
-		with tf.variable_scope('lreg'):
-			w1 = tf.Variable(np.random.normal(size=(N_accuracy, N_hidden_1)), name='W1')
-			w2 = tf.Variable(np.random.normal(size=(N_hidden_1, N_hidden_2)), name='W2')
-			w3 = tf.Variable(np.random.normal(size=(N_hidden_2, N_accuracy)), name='W3')
+        with tf.variable_scope('lreg'):
+            w1 = tf.Variable(np.random.normal(size=(N_accuracy, N_hidden_1)), name='W1')
+            w2 = tf.Variable(np.random.normal(size=(N_hidden_1, N_hidden_2)), name='W2')
+            w3 = tf.Variable(np.random.normal(size=(N_hidden_2, N_accuracy)), name='W3')
 
-			w = list([w1, w2, w3])
-			n_layer = len(w)
+            w = list([w1, w2, w3])
+            n_layer = len(w)
 
-			b1 = tf.Variable(np.random.normal(size=(N_hidden_1,)))
-			b2 = tf.Variable(np.random.normal(size=(N_hidden_2,)))
+            b1 = tf.Variable(np.random.normal(size=(N_hidden_1,)))
+            b2 = tf.Variable(np.random.normal(size=(N_hidden_2,)))
 
-			layer_1 = tf.matmul(tf.transpose(x), w1)
-			layer_1 = tf.add(layer_1, b1)
-			layer_1 = tf.tanh(layer_1)
+            layer_1 = tf.matmul(tf.transpose(x), w1)
+            layer_1 = tf.add(layer_1, b1)
+            layer_1 = tf.tanh(layer_1)
 
-			layer_2 = tf.matmul(layer_1, w2)
-			layer_2 = tf.add(layer_2, b2)
-			layer_2 = tf.tanh(layer_2)
+            layer_2 = tf.matmul(layer_1, w2)
+            layer_2 = tf.add(layer_2, b2)
+            layer_2 = tf.tanh(layer_2)
 
-			y_pred = tf.matmul(layer_2, w3)
-			# y_pred = tf.tanh(y_pred)
+            y_pred = tf.matmul(layer_2, w3)
+            # y_pred = tf.tanh(y_pred)
 
-			loss = 0.5*tf.reduce_mean(tf.square(y_pred[0, :] - y))
-			# loss = tf.reduce_mean((y_pred[0,:] - y))
-			# loss = tf.reduce_sum((y_pred - y))
+            loss = 0.5*tf.reduce_mean(tf.square(y_pred[0, :] - y))
+            # loss = tf.reduce_mean((y_pred[0,:] - y))
+            # loss = tf.reduce_sum((y_pred - y))
 
-			# Add regularization term
-			reg_term = tf.Variable(0.0)
-			reg_term = tf.cast(reg_term, tf.float64)
-			for i_index in range(n_layer):
-				reg_term = reg_term + tf.reduce_mean(tf.nn.l2_loss(tf.cast(w[i_index], tf.float64)))
+            # Add regularization term
+            reg_term = tf.Variable(0.0)
+            reg_term = tf.cast(reg_term, tf.float64)
+            for i_index in range(n_layer):
+                reg_term = reg_term + tf.reduce_mean(tf.nn.l2_loss(tf.cast(w[i_index], tf.float64)))
 
-			reg_term = reg_term * reg_param
-			loss = loss + reg_term
+            reg_term = reg_term * reg_param
+            loss = loss + reg_term
 
         return x, y, y_pred, loss, b1, b2, reg_term, w1, w2, w3
 
@@ -155,8 +155,8 @@ if __name__ == '__main__':
     loss_list = np.empty(len(epoch_list))
     y_pred_list = []
     i = 1
-	i_epoch = epoch_list[-1]
-	
+    i_epoch = epoch_list[-1]
+
     for i in range(len(epoch_list)):
         i_epoch = epoch_list[i]
         print(i_epoch)
@@ -164,10 +164,10 @@ if __name__ == '__main__':
         loss_list[i] = loss_val
         y_pred_list.append(y_pred_val)
 
-	x_batch, y_batch = generate_dataset()
-	generate_pred_plot(x_batch,y_batch,y_pred_val, 0)
-	plt.show()
-	
+    x_batch, y_batch = generate_dataset()
+    generate_pred_plot(x_batch,y_batch,y_pred_val, 0)
+    plt.show()
+
     # With this we just generate the error plot over the iterations
     generate_error_plot(loss_list, epoch_list)
     # With this we can generate a GIF from the created images

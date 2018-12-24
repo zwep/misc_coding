@@ -22,11 +22,15 @@ def plot_dbscan(db):
     #
     # Black removed and is used for noise instead.
     unique_labels = set(labels)
-    colors = [plt.cm.Spectral(each) for each in for k, col in zip(unique_labels, colors): if k == -1:
+
+    for k, col in zip(unique_labels, colors):
+        for each in k, col:
+            colors = plt.cm.Spectral(each)
+        if k == -1:
     # Black used for noise.
-        col = [0, 0, 0, 1]
+            col = [0, 0, 0, 1]
     #
-    class_member_mask = (labels == k)
+        class_member_mask = (labels == k)
     #
     xy = data[class_member_mask & core_samples_mask]
     plt.plot(xy[:, 0], xy[:, 1], 'o', markerfacecolor=tuple(col),

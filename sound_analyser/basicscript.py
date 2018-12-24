@@ -45,10 +45,23 @@ import matplotlib.pyplot as plt
 import numpy as np
 import wave
 import sys
+from pydub import AudioSegment
 
 
-spf = wave.open('apt.wav','r')
-#spf = wave.open('20170804_sound_record.wav','r')
+file_name_mp3 = '/home/charmmaria/Music/popping.mp3'
+file_name = '/home/charmmaria/Music/poppibg.m4a'
+# spf = wave.open('apt.wav','r')
+spf = wave.open(file_name_mp3, 'r')
+test = AudioSegment.from_file(file_name)
+test = AudioSegment.from_mp3(file_name)
+dir(test)
+len(test)
+test.duration_seconds
+len(test.get_array_of_samples())
+len(test.raw_data)
+z = np.array(test.get_array_of_samples())
+plt.plot(z)
+#spf wave.open('20170804_sound_record.wav','r')
 
 #Extract Raw Audio from Wav File
 signal = spf.readframes(-1)

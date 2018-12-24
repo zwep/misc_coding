@@ -16,7 +16,7 @@ import glob
 
 import itertools
 
-from tablehandler.createTable import EditLabels
+from tablehandler.old_code.createTable import EditLabels
 
 
 class HandleFile:
@@ -57,7 +57,6 @@ class HandleFile:
             else:
                 self.month = str(self.month).zfill(2)
 
-        
         file_dir = glob.glob(self.path_in + '\\*')
         file_list = [x for x in file_dir if re.findall(str(self.year) + '_' + self.month, x)]
         file_list.sort()
@@ -82,8 +81,8 @@ class HandleFile:
         :return: nothing
         """
         for i, x in enumerate(data):
-            dest_path = os.path.join(self.path_out, os.path.basename(self.file_list[i]))
-            x.to_csv(dest_path, index=False, header=True)
+            target_path = os.path.join(self.path_out, os.path.basename(self.file_list[i]))
+            x.to_csv(target_path, index=False, header=True)
 
 
 class PrepRawFile(HandleFile):
@@ -106,14 +105,16 @@ class PrepRawFile(HandleFile):
         self.data = np.array([])
         self.data_prep = np.array([])
 
-    def prep_data(self, data):
+    def prep_data(self, data=None):
         """
         converts some columns to dates, adds some columns for years/months as well
         Also converts some columns to upper case only
 
         :return: a prepped dataframe
         """
-        assert self.data, "Try to run load_trx_file() first"
+        if data:
+            assert self.data, "Run load_data() to fill data"
+            data = self.data
 
         data_prep = data[list(range(len(self.column_names)))]
         data_prep.columns = self.column_names

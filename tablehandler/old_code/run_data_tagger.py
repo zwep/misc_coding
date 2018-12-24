@@ -1,22 +1,18 @@
 # encoding: utf-8
 
 """
-Here we are going to create one file from all the transaction documents...
 
-Maybe easier to analyze...
+With the code below we can tag data
 
-At one point we need to start querieing a database.. because we cant load everything in memory
-
-Lolwait no, it is not even 1 MB yet.
 """
 
 import os
-import numpy as np
 import re
+import numpy as np
 import pandas as pd
 
 
-def prep_data(data, i_year, data_inc=None):
+def prep_data(data, data_inc):
     """
     converts some columns to dates, adds some columns for years/months as well
     Also converts some columns to upper case only
@@ -24,10 +20,7 @@ def prep_data(data, i_year, data_inc=None):
     :return: a prepped dataframe
     """
     # Edit date..
-    if int(i_year) > 2016:
-        data.loc[:, 'Rentedatum'] = pd.to_datetime(data['Rentedatum'], format="%Y-%m-%d")
-    else:
-        data.loc[:, 'Rentedatum'] = pd.to_datetime(data['Rentedatum'], format="%Y%m%d")
+    data.loc[:, 'Rentedatum'] = pd.to_datetime(data['Rentedatum'], format="%Y%m%d")
     data['year'] = data['Rentedatum'].map(lambda x: str(x.year))
     data['month'] = data['Rentedatum'].map(lambda x: str(x.month).zfill(2))
     data['day'] = data['Rentedatum'].map(lambda x: str(x.day).zfill(2))
@@ -58,25 +51,12 @@ def date_check(input_path):
     return (min(w['DATE']), max(w['DATE']))
 
 
-dir_transaction = '/home/charmmaria/data/Transacties'
-trx_years = [x for x in os.listdir(dir_transaction) if re.match('^[0-9]+$', x)]
-# Written in the way the new ones are defined...
 column_names_old = ["IBAN/BBAN","Munt", "Datum","DC_IND", "Bedrag", "Tegenrekening IBAN/BBAN", "Naam tegenpartij",
                     "Rentedatum", "MUT_IND", "V1", "Omschrijving-1", "Omschrijving-2"]
+re_comp = re.compile("[0-9]{4}")
+year_set = sorted(set([re_comp.findall(x)[0] for x in os.listdir(raw_dir) if re_comp.match(x)]))
 
-
-for i_year in trx_years:
-    temp_path = os.path.join(dir_transaction, i_year)
-    trx_files = os.listdir(temp_path)
-    i_file = os.path.join(temp_path, trx_files[0])
-    temp = pd.read_csv(i_file, encoding='latin')
-    print('\n year: ', i_year)
-    print('Columns: ', temp.columns)
-
-
-total_db = pd.DataFrame()
-
-for i_year in sorted(trx_years):
+for i_year in year_set:
     print(i_year)
 
     if int(i_year) > 2016:
@@ -84,7 +64,7 @@ for i_year in sorted(trx_years):
     else:
         ind_header = None
 
-    year_dir = os.path.join(dir_transaction, i_year)
+    year_dir = os.path.join(raw_dir, i_year)
     year_files = [x for x in sorted(os.listdir(year_dir)) if x.endswith('.txt') or x.endswith('.csv')]
 
     for i_file in year_files:
@@ -97,11 +77,33 @@ for i_year in sorted(trx_years):
             A = A[list(range(len(column_names_old)))]
             A.columns = column_names_old
 
-        temp = prep_data(A, i_year, ind_header)
 
-        total_db = total_db.append(temp)
+        temp = prep_data(A, ind_header)
+        #print(prep)
+
+x1 = pd.read_csv(file_path)
+x1 = pd.DataFrame(x1)
+
+# [os.path.join(x[0], x[2]) for x in os.walk(raw_dir) if x[2]]
+# # labeling_class = cT.EditLabels('label_dict.txt', path=label_dict_dir)
 
 
-# https://stackoverflow.com/questions/30631325/writing-to-mysql-database-with-pandas-using-sqlalchemy-to-sql/30653988#30653988
-# https://pandas.pydata.org/pandas-docs/stable/io.html#engine-connection-examples
-total_db.to_sql()
+
+# Upon initialization, the loaded data is immediately preprocessed
+for i_year in year_set:
+    print('Loading year ', i_year)
+    # Load, prep and write the files
+    file_list = []
+    data_trx = [pd.read_csv(x, header=0, parse_dates=True) for x in file_list]
+    data_trx = [x.fillna('') for x in data_trx]
+
+    temp_raw_files = cTag.PrepRawFile(i_year, path_in=raw_dir)
+    temp_raw_files.load_trx_file()
+    temp_raw_files.data
+    temp_raw_files.write_trx_file(temp_raw_files.data_prep)
+
+    test = cTag.HandleFile(i_year, path_in=prep_dir)
+    test.load_trx_file()[-12]
+    # Load, label and write the files
+    temp_label_files = cTag.LabelData(i_year, path_in=prep_dir, labels=labeling_class, path_out=label_dir)
+    temp_label_files.write_trx_file(temp_label_files.data_label)

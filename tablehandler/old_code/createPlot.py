@@ -56,7 +56,7 @@ raw_dir = r'D:\data\Testing_data\Transaction\raw_transactions'
 prep_dir = r'D:\data\Testing_data\Transaction\prep_transactions'
 label_dir = r'D:\data\Testing_data\Transaction\label_transactions'
 
-test = cTag.('2016', path_in=label_dir)
+test = []
 i_group = ['city']
 i_time = ['month']
 agg_dict = {'city': 'size', 'VALUE': 'mean'}
