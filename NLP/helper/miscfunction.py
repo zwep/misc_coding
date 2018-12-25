@@ -2,7 +2,7 @@
 
 """
 
-Here we have a bunch of misc-functions that we use in other programmes...
+Here we have a bunch of video-functions that we use in other programmes...
 
 Tralala
 

@@ -1,4 +1,0 @@
-import sys
-
-z = sys.argv
-print(z)

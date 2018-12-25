@@ -9,6 +9,7 @@ import sklearn
 from helper.plotfunction import tsne_plot
 import numpy as np
 
+
 def score_logistic_regression(features, target, feature_label, target_label=None, plot=False, p_train=0.7):
     """
     Simple function for plotting and scoring a simple linear regression.
