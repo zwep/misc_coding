@@ -1,0 +1,42 @@
+<CustButton@Button>
+	font_size: 32
+	color: 0, 0, 0, 1
+	size: 150, 50
+	background_normal: ''
+	background_color: .88, .88, .88, 1
+	
+<SoundSummarizer>:
+    id: henkiseensteen
+	display: entry, entry_second
+	cols: 2
+	rows: 3
+	spacing: 10
+	padding: 10
+	
+	BoxLayout:
+		TextInput:
+			id: entry
+			font_size: 32
+			multiline: True
+			
+	BoxLayout:
+		TextInput:
+			id: entry_second
+			font_size: 32
+			multiline: True
+	CustButton:
+		text: 'Play sound' 
+		on_press: henkiseensteen.play_sound() 
+		
+	CustButton:
+		text: 'Write_sound'
+		on_press: henkiseensteen.write_sound() 
+		
+	CustButton:
+		text: 'Record' 
+		on_press: henkiseensteen.print_text('recording')
+		on_release: henkiseensteen.record_sound(10)
+		
+	CustButton:
+		text: 'Sound to text' 
+		on_press: henkiseensteen.speech_to_text()
