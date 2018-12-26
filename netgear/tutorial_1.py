@@ -1,24 +1,24 @@
 # encoding: utf-8
 
-import numpy as np
-import os
-import pynetgear
+"""
+To obtain netgear data...
+"""
 
-
-print('Starting script\n')
 from pynetgear import Netgear
-from elasticsearch import Elasticsearch
+import config
 import os
 from datetime import datetime
-print('Loaded all libraries\n')
+import pandas as pd
 
 
-netgear = Netgear(password=netgear_key)
+def get_netgear_devices():
+    netgear_key = os.environ['netgear_key']
+    netgear = Netgear(password=netgear_key)
 
-res_dict = []
-for i in netgear.get_attached_devices():
-    temp_dict = dict(zip(i._fields, list(i)))
-    temp_dict['date'] = datetime.isoformat(datetime.now())
-    res_dict.append(temp_dict)
+    res_dict = []
+    for i in netgear.get_attached_devices():
+        temp_dict = dict(zip(i._fields, list(i)))
+        temp_dict['date'] = datetime.isoformat(datetime.now())
+        res_dict.append(temp_dict)
 
-res_dict[0]
+    return pd.DataFrame.from_dict(res_dict)
