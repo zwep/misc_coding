@@ -9,6 +9,9 @@ __pycache__/
 .idea
 config.py
 
+#API stuff
+api_secrets.py
+
 # C extensions
 *.so
 
