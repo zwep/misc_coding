@@ -10,7 +10,7 @@ __pycache__/
 config.py
 
 #API stuff
-api_secrets.py
+../domotica/api_secrets.py
 
 # C extensions
 *.so
