@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup as bs
 
 # Import travel thing
 file_name = 'reistransacties-3528010491264178.csv'
-file_dir = r'C:\Users\20184098\Documents\NS Busines'
+file_dir = r'C:\Users\20184098\data\NS Busines'
 file_path = os.path.join(file_dir, file_name)
 
 auth_obj = {'username': api_secrets.NS_username, 'x-api-key': api_secrets.NS_API_KEY}
@@ -34,9 +34,16 @@ dict_station = dict(json_station)['payload']
 station_code = {x['namen']['lang']: x['code'] for x in dict_station}
 via_ind = False
 
+# Spits tijden
+spits_ochtend_1 =datetime.time(datetime.strptime("6:30", "%H:%M"))
+spits_ochtend_2 =datetime.time(datetime.strptime("9:00", "%H:%M"))
+spits_avond_1 = datetime.time(datetime.strptime("16:00", "%H:%M"))
+spits_avond_2 =datetime.time(datetime.strptime("18:30", "%H:%M"))
+
 # Eigen reizen
 travel_list = pd.read_csv(file_path, encoding='latin', sep=';')
 
+total_cost = []
 for i, i_row in travel_list.iterrows():
     if i_row['Vertrek'] is not np.nan:
         stn1 = i_row['Vertrek']
@@ -45,24 +52,46 @@ for i, i_row in travel_list.iterrows():
         date = i_row['Datum']
         check_in = i_row['Check in']
         check_uit = i_row['Check uit']
-        check_in_iso = str(datetime.strptime(date + check_in, "%d-%m-%y%H:%M").astimezone()).replace(' ', 'T')
+        check_in_iso = datetime.strptime(date + check_in, "%d-%m-%y%H:%M").astimezone()
+        check_in_iso_str = str(check_in_iso).replace(' ', 'T')
         check_uit_iso = str(datetime.strptime(date + check_uit, "%d-%m-%y%H:%M").astimezone()).replace(' ', 'T')
     else:
         continue
 
-    get_data = {'fromStation': stn1, 'toStation': stn2, 'plannedFromTime': check_in_iso}
+    get_data = {'fromStation': stn1, 'toStation': stn2, 'plannedFromTime': check_in_iso_str}
     res = requests.get(basis_trips_url, params=get_data, headers=auth_obj)
-    res.json()
 
-    for i in dict(res.json())['trips'][0].keys():
-        print(i)
+    if res.status_code == 200:
+        # Oke ben er bijna... nu alleen nog ff de juiste class erbij pakken... en dna klaar
+        spits = False
+        if spits_ochtend_1 < check_in_iso.time() <= spits_ochtend_2:
+            print('Spits', check_in_iso)
+            spits = True
+        if spits_avond_1 < check_in_iso.time() <= spits_avond_2:
+            print('Spits', check_in_iso)
+            spits = True
 
-    # Oke ben er bijna... nu alleen nog ff de juiste class erbij pakken... en dna klaar
+        sel_travelClass = 'SECOND_CLASS'
+        sel_discountType = 'DISCOUNT_40_PERCENT'
+        if spits:
+            sel_discountType = 'NO_DISCOUNT'
 
-    sel_travelClass = 'SECOND_CLASS'
-    sel_discountType = 'NO_DISCOUNT'
-    sel_discountType = 'DISCOUNT_40_PERCENT'
-    sel_product = 'OVCHIPKAART_ENKELE_REIS'
+        sel_product = 'OVCHIPKAART_ENKELE_REIS'
 
-for i in dict(res.json())['trips'][0]['fares']:
-    print(i)
+        for i in dict(res.json())['trips'][0]['fares']:
+            if i['product'] == sel_product and i['travelClass'] == sel_travelClass and i['discountType'] == sel_discountType:
+                cost_c = i['priceInCents']
+                print(check_in_iso, stn1, stn2, cost_c)
+                total_cost.append((check_in_iso, cost_c))
+
+    else:
+        print('Encounterd error ', res.status_code)
+        print('Content json', res.json())
+
+# Process to count per month spending..
+A = pd.DataFrame(total_cost)
+A.columns = ['date', 'cost']
+A['date'] = pd.to_datetime(A['date'])
+A['cost'] = A['cost']/100
+A['yearmonth'] = A['date'].map(lambda x: str(x.year) + str(x.month))
+A.groupby('yearmonth')['cost'].sum()
